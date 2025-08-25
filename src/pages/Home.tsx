@@ -137,6 +137,114 @@
 // }
 
 
+// import { motion } from "framer-motion";
+
+// export default function Home() {
+//   return (
+//     <div className="bg-gradient-to-b from-gray-50 to-gray-100">
+//       {/* Hero Section */}
+//       <section className="flex flex-col items-center text-center py-20 px-6">
+//         <motion.h1
+//           className="text-4xl md:text-5xl font-extrabold text-gray-900"
+//           initial={{ opacity: 0, y: -40 }}
+//           animate={{ opacity: 1, y: 0 }}
+//           transition={{ duration: 0.8, type: "spring", stiffness: 120 }}
+//         >
+//           Hi, I’m{" "}
+//           <motion.span
+//             className="text-blue-600"
+//             initial={{ scale: 0.8, opacity: 0 }}
+//             animate={{ scale: 1, opacity: 1 }}
+//             transition={{ delay: 0.3, duration: 0.6 }}
+//           >
+//             Devendra 👋
+//           </motion.span>
+//         </motion.h1>
+
+//         <motion.p
+//           className="mt-6 max-w-3xl text-base md:text-lg text-gray-700 leading-relaxed"
+//           initial={{ opacity: 0, y: 20 }}
+//           animate={{ opacity: 1, y: 0 }}
+//           transition={{ delay: 0.5, duration: 0.8 }}
+//         >
+//           MERN Full-Stack Developer (2.4+ yrs) building{" "}
+//           <span className="font-semibold">cloud-integrated</span>,{" "}
+//           <span className="font-semibold">AI-enabled apps</span>. Skilled in React +
+//           TypeScript, NestJS, MongoDB/MySQL, AWS, CI/CD, and secure APIs.
+//         </motion.p>
+
+//         <motion.div
+//           className="mt-10 flex gap-4"
+//           initial="hidden"
+//           animate="visible"
+//           variants={{
+//             hidden: { opacity: 0, scale: 0.9 },
+//             visible: {
+//               opacity: 1,
+//               scale: 1,
+//               transition: { delay: 0.7, type: "spring", stiffness: 120 },
+//             },
+//           }}
+//         >
+//           <motion.a
+//             href="/resume"
+//             className="px-6 py-3 rounded-full bg-blue-600 text-white shadow hover:bg-blue-700 transition"
+//             whileHover={{ scale: 1.05 }}
+//             whileTap={{ scale: 0.95 }}
+//           >
+//             View Resume
+//           </motion.a>
+//           <motion.a
+//             href="/projects"
+//             className="px-6 py-3 rounded-full bg-white text-gray-900 ring-1 ring-gray-200 hover:ring-gray-300 transition"
+//             whileHover={{ scale: 1.05 }}
+//             whileTap={{ scale: 0.95 }}
+//           >
+//             See Projects
+//           </motion.a>
+//         </motion.div>
+//       </section>
+
+//       {/* About Section */}
+//       <section className="max-w-5xl mx-auto py-14 px-6">
+//         <motion.h2
+//           className="text-2xl md:text-3xl font-bold text-gray-900"
+//           initial={{ opacity: 0, x: -40 }}
+//           whileInView={{ opacity: 1, x: 0 }}
+//           viewport={{ once: true }}
+//           transition={{ duration: 0.7 }}
+//         >
+//           About Me
+//         </motion.h2>
+
+//         <motion.p
+//           className="mt-6 text-gray-700 leading-relaxed"
+//           initial={{ opacity: 0, y: 30 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           viewport={{ once: true }}
+//           transition={{ delay: 0.2, duration: 0.8 }}
+//         >
+//           I build products where{" "}
+//           <span className="font-semibold text-blue-600">
+//             frontend elegance
+//           </span>{" "}
+//           meets{" "}
+//           <span className="font-semibold text-blue-600">
+//             backend robustness
+//           </span>
+//           . I’ve shipped{" "}
+//           <span className="font-semibold">EdTech, Real Estate</span>, and{" "}
+//           <span className="font-semibold">SDG dashboards</span>—integrating
+//           Razorpay, AI APIs, and AWS. My focus:{" "}
+//           <span className="italic">performance, security</span>, and{" "}
+//           <span className="italic">developer-friendly DX</span>.
+//         </motion.p>
+//       </section>
+//     </div>
+//   );
+// }
+
+
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -169,8 +277,8 @@ export default function Home() {
         >
           MERN Full-Stack Developer (2.4+ yrs) building{" "}
           <span className="font-semibold">cloud-integrated</span>,{" "}
-          <span className="font-semibold">AI-enabled apps</span>. Skilled in React +
-          TypeScript, NestJS, MongoDB/MySQL, AWS, CI/CD, and secure APIs.
+          <span className="font-semibold">AI-enabled apps</span>. Skilled in
+          React + TypeScript, NestJS, MongoDB/MySQL, AWS, CI/CD, and secure APIs.
         </motion.p>
 
         <motion.div
@@ -203,6 +311,44 @@ export default function Home() {
             See Projects
           </motion.a>
         </motion.div>
+      </section>
+
+      {/* Quick Sections Grid */}
+      <section className="max-w-6xl mx-auto py-14 px-6">
+        <motion.h2
+          className="text-2xl md:text-3xl font-bold text-gray-900 text-center"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          Explore My Work
+        </motion.h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-10">
+          {[
+            { name: "Projects", link: "/projects" },
+            { name: "Skills", link: "/skills" },
+            { name: "Experience", link: "/experience" },
+            { name: "Education", link: "/education" },
+            { name: "Resume", link: "/resume" },
+            { name: "Contact", link: "/contact" },
+          ].map((item, i) => (
+            <motion.a
+              key={i}
+              href={item.link}
+              className="p-6 bg-white rounded-xl shadow hover:shadow-lg transition text-center font-semibold text-gray-800"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.6 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {item.name}
+            </motion.a>
+          ))}
+        </div>
       </section>
 
       {/* About Section */}
